@@ -1,0 +1,14 @@
+[
+  {
+    "model": "ios.os",
+    "pk": 1,
+    "fields":{
+    "servico": "servico x",
+    "descricao" : "descricao x",
+    "detalhes": "detalhes x",
+    "prioridade": "3",
+    "created_at": "2019-10-09T10:10+00:00"
+   }
+
+  }
+]
