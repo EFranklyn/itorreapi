@@ -26,6 +26,9 @@ router = routers.DefaultRouter()
 router.register('',OsViewSet) #nome da rota
 
 urlpatterns = [
-    path('api/', include(router.urls + [url('auth',views.obtain_auth_token)])),
-
+    path('api/', include(router.urls)),
+    # + [url('auth',views.obtain_auth_token)])),
+    # a rota de cima usava o token padrão agora
+    # toda a API vai usar token JWT tendo autenticação
+    # por apenas uma rota auth-api
 ]

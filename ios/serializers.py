@@ -19,6 +19,6 @@ class OsSerializers(serializers.ModelSerializer):
     user_put = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(),write_only=True,source='user')
     class Meta:
         model = Os
-        fields = ('id','servico','descricao','detalhes','prioridade',
+        fields = ('id','servico','descricao','valor','status','detalhes','prioridade',
                   'created_at','updated_at','user','user_put')
         #fields = '__all__'
