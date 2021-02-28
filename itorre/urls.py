@@ -18,12 +18,13 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
 from rest_framework.authtoken import views
-
+from rest_framework_jwt.views import obtain_jwt_token
 from ios.api import OsViewSet
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('os/', include('ios.urls')),
-    path('auth/', include('rest_framework.urls',namespace='rest_framework'))
+    path('auth/', include('rest_framework.urls',namespace='rest_framework')),
+    path('auth-api/',obtain_jwt_token),
 ]

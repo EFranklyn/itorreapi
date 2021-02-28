@@ -14,6 +14,8 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from datetime import  datetime,timedelta
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -125,14 +127,20 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     #'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
-'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',
+    'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE':100,
     'DEFAULT_PERMISSION_CLASSES':(
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
 
     )
+}
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': timedelta(days=1)
+
 }
