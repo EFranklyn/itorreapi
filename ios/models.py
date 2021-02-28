@@ -6,6 +6,13 @@ PRIORIDADE = (
         ('2', 'Média'),
         ('3', 'Alta')
     )
+STATUS = (
+    (('1','Não Iniciado'),
+     ('2','Iniciado'),
+     ('3','Finalizado'),
+     ('4','Reaberto'),
+     )
+)
 
 class ControletempMixin(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -20,6 +27,9 @@ class Os(ControletempMixin,models.Model):
     detalhes   =  models.CharField(max_length=255)
     prioridade = models.CharField(max_length=2, choices=PRIORIDADE)  # usar choices
     user = models.ForeignKey('auth.User',on_delete = models.PROTECT)
+    valor = models.FloatField()
+    status = models.CharField(max_length=2, choices=STATUS)
+
 '''
     @classmethod
     def prioridade_up(self,sender,instance,**kwargs):

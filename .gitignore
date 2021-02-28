@@ -1,4 +1,6 @@
 venv/
 .idea/
 ios/____pycache__/
-
+itorre/__pycache__/
+ios/migrations/__pycache__/
+.gitignore
