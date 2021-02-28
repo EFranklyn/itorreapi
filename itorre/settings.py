@@ -9,13 +9,17 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+import environ
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from datetime import  datetime,timedelta
 
+
+env = environ.Env()
+environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -23,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '98=j1$8g+3g!eokbxoygyg0qd+zzi!uidr(beix@q1(xpxmp7+'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True# env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -80,10 +84,8 @@ WSGI_APPLICATION = 'itorre.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default':env.db(),
+
 }
 
 
@@ -124,6 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = (
+    os.path.join(BASE_DIR,'static'),
+)
+
 
 REST_FRAMEWORK = {
     #'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
