@@ -1,1 +1,1 @@
-web: gunicorn itorreapi.wsgi
+web: gunicorn itorre.wsgi
