@@ -1,0 +1,43 @@
+{% extends 'gos/paginas/base.html' %} {%block content%}
+<a href="/logout/">logout</a>
+      <div class="table-responsive table-hover">
+        <table class="tabelafixa table table-striped table-bordered">
+          <thead class="tabelafixa">
+            <tr></tr>
+              <th class="nd">servico</th>
+              <th class="nd">Referencia</th>
+              <th class="nd">Cep</th>
+              <th class="nd">Rua</th>
+              <th class="nd">n°</th>
+              <th class="nd">Complemento</th>
+              <th class="nd">Bairro</th>
+              <th class="nd">Cidade</th>
+              <th class="nd">Estado</th>
+              <th class="nd">Data do Pedido</th>
+              <th class="nd">Usuario</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabela" class="tabelafixa" classname = "ttbody">
+            {%for os in os %}
+            <tr>
+              <td><a href="{% url 'home' %}"> {{os.servico}} </a></td>
+              <td>{{os.referencia}}</td>
+              <td>{{os.cep}}</td>
+              <td>{{os.logradouro}}</td>
+              <td>{{os.numero}}</td>
+              <td>{{os.complemento}}</td>
+              <td>{{os.bairro}}</td>
+              <td>{{os.cidade}}</td>
+              <td>{{os.uf}}</td>
+              <td>{{os.dtpedido}}</td>
+              <td>{{os.user}}</td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+        </div>
+{%endblock%}
+
+
+
