@@ -1,0 +1,21 @@
+<DOCTYPE html>
+  <html lang="pt">
+    <head>
+      <meta charset="UTF-8" />
+      <title>GOS {%block title%} {%endblock%}</title>
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/css.css' %}"/>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+        crossorigin="anonymous"
+      />
+
+    </head>
+    <body>
+      <h1>GOS</h1>
+      {%block content%} {%endblock%}
+    </body>
+  </html>
+</DOCTYPE>

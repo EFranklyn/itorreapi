@@ -1,0 +1,16 @@
+{% extends 'gos/paginas/base.html' %}
+
+    {% block title %} - Nova OS {% endblock%}
+{% block content %}
+    <h3>Nova OS</h3>
+    <div class="container">
+    <form action="/os/create/" method="post" {%if errors %} class="was-validated"{%endif%}>
+        {%csrf_token%}
+        {%include 'gos/paginas/formos.html'%}
+      <br>
+
+        <button type="submit" class="btn btn-success">Gerar</button>
+
+    </form>
+    </div>
+{% endblock content %}
