@@ -22,12 +22,13 @@ from rest_framework_jwt.views import obtain_jwt_token
 from django.conf.urls.static import static
 from django.conf import settings
 
-from ios.views import teste
+from ios.views import login
 
 urlpatterns = [
+    path('login/',login),
+    path('',login),
     path('admin/', admin.site.urls),
     path('os/', include('ios.urls')),
     path('auth/', include('rest_framework.urls',namespace='rest_framework')),
     path('auth-api/',obtain_jwt_token),
-    path('teste',teste),
 ] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
