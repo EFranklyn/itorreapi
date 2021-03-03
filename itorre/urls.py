@@ -31,4 +31,4 @@ urlpatterns = [
     path('os/', include('ios.urls')),
     path('auth/', include('rest_framework.urls',namespace='rest_framework')),
     path('auth-api/',obtain_jwt_token),
-] #+ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

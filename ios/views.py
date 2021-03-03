@@ -16,7 +16,6 @@ def login (request):
     username = request.POST.get('username')
     password = request.POST.get('password')
     next     = request.POST.get('next')
-    print(request.POST)
     user = authenticate(username=username,password =password)
     if user:  #reforçar futuramente a segurança
         djangologin(request,user)
@@ -25,4 +24,5 @@ def login (request):
             return HttpResponseRedirect(next)
         return HttpResponseRedirect('/admin/')
     if not user:
-        return HttpResponse('algo deu errado')
+        falha = True
+        return render(request,'gos/paginas/login1.html',{'falha':falha})

@@ -163,11 +163,12 @@ iframe {
   align-items: center;
   padding: 15px;
 
-  background: #2575fc;
-  background: -webkit-linear-gradient(left, #6a11cb, #2575fc);
-  background: -o-linear-gradient(left, #6a11cb, #2575fc);
-  background: -moz-linear-gradient(left, #6a11cb, #2575fc);
-  background: linear-gradient(left, #6a11cb, #2575fc);
+    background: #302F29;
+    background: -webkit-linear-gradient(left, #4D4A41,#302F29);
+    background: -o-linear-gradient(left, #302F29, #4D4A41);
+    background: -moz-linear-gradient(left, #4D4A41,#302F29 );
+    background: linear-gradient(left, #302F29, #4D4A41);
+
 
 }
 
@@ -345,12 +346,14 @@ input.input100 {
   width: 100%;
   height: 100%;
   opacity: 0;
+  color: #F55111 !important;
 
-  background: #2575fc;
-  background: -webkit-linear-gradient(right, #6a11cb, #2575fc);
-  background: -o-linear-gradient(right, #6a11cb, #2575fc);
-  background: -moz-linear-gradient(right, #6a11cb, #2575fc);
-  background: linear-gradient(right, #6a11cb, #2575fc);
+
+  background: #A1861D;
+  background: -webkit-linear-gradient(right, #615111, #E0BC28);
+  background: -o-linear-gradient(right, #E0BC28, #615111);
+  background: -moz-linear-gradient(right, #E0D20B, #615111);
+  background: linear-gradient(right, #E0D20B, #615111);
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -360,6 +363,8 @@ input.input100 {
 
 .login100-form-btn:hover {
   background-color: transparent;
+  color: #111111 !important;
+
 }
 .login100-form-btn:hover:before {
   opacity: 1;
